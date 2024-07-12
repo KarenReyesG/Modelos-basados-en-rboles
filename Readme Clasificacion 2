@@ -1,0 +1,39 @@
+Laboratorio de Modelos Basados en Árboles - Parte 12: Clasificación 2
+# Introducción
+
+En este laboratorio, se abordará el análisis de un dataset de enfermedad cardíaca utilizando un modelo de Random Forest para la predicción de la mortalidad. Se evaluará el rendimiento del modelo con métricas como la precisión, el F1-Score y la matriz de confusión, y se explorará la posibilidad de desequilibrio de clases.
+
+# 1. Carga y Preprocesamiento de Datos:
+
+Se carga el dataset heart_failure_data_ETL.csv utilizando la librería Pandas.
+Se elimina la columna Edad_Categoria que no parece ser relevante para la predicción.
+Se separan las características (X) y la variable objetivo (y).
+Se divide el conjunto de datos en entrenamiento (X_train, y_train) y prueba (X_test, y_test) de manera estratificada para garantizar una distribución similar de clases en ambos conjuntos.
+# 2. Ajuste del Modelo Random Forest:
+
+Se ajusta un modelo de Random Forest utilizando la librería scikit-learn.
+Se utiliza un conjunto de parámetros inicial para el entrenamiento del modelo.
+# 3. Evaluación del Rendimiento:
+
+Se calcula la precisión del modelo en el conjunto de prueba.
+Se genera la matriz de confusión para visualizar la distribución de las predicciones correctas e incorrectas en cada clase.
+Se calcula el F1-Score, una métrica que combina la precisión y la sensibilidad.
+Se compara el F1-Score con la precisión para evaluar si el modelo captura completamente el rendimiento en este caso o si hay un desequilibrio de clases.
+# 4. Análisis del Desequilibrio de Clases:
+
+Se observa que el F1-Score es menor que la precisión, lo que sugiere un posible desequilibrio de clases.
+Esto significa que el modelo puede ser bueno para predecir la clase mayoritaria (por ejemplo, "No hubo muertes"), pero no tan bueno para predecir la clase minoritaria ("Hubo muertes").
+# 5. Optimización de Hiperparámetros:
+
+Se utiliza la técnica GridSearchCV para buscar los mejores hiperparámetros del Random Forest en base al F1-Score.
+Se define un rango de valores para cada hiperparámetro y se evalúan diferentes combinaciones.
+# 6. Interpretación del Modelo Optimizado:
+
+Se obtienen los mejores hiperparámetros encontrados por GridSearchCV.
+Se entrena un nuevo modelo Random Forest con los hiperparámetros optimizados.
+Se evalúa la precisión y el F1-Score del modelo optimizado en el conjunto de prueba.
+# 7. Conclusiones:
+
+Se ha realizado un análisis completo del dataset de enfermedad cardíaca utilizando un modelo de Random Forest.
+Se ha evaluado el rendimiento del modelo con diferentes métricas y se ha identificado un posible desequilibrio de clases.
+Se ha optimizado el modelo mediante la búsqueda de hiperparámetros y se ha obtenido un mejor rendimiento.
